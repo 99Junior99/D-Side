@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/*geral*/
+:root {
+    --cinza-desaturado: #d9d9d9;
+    --lilás: #9E1F83;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--cinza-desaturado);
+
+}
+
+/*scrollbar*/
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #181818;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 10px;
+}
+
+/*sections geral*/
+section {
+    padding: 0;
+}
+
+/*music*/
+.music {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--lilás);
+}
+
+.music .bg {
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(41%) grayscale(100%);
+}
+
+.music:before {
+    z-index: 777;
+    content: '';
+    position: absolute;
+    background: var(--lilás);
+
+    filter: opacity(0.1);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/*content*/
+.music .albums {
+    z-index: 888;
+    color: var(--cinza-desaturado);
+    width: 70%;
+    margin: 0rem 0rem 0rem 2rem;
+
+}
+
+.music .albums .wrapper {
+    display: grid;
+    grid-template-columns: 26rem 26rem 26rem;
+
+}
+
+
+.music .wrapper .card {
+    position: relative;
+    margin: 8rem 0 0 2rem;
+    width: 25vw;
+    height: 50vh;
+    border-radius: 1rem;
+    transition: ease-in .3s;
+}
+
+.music #wdown {
+    margin-bottom: 5rem;
+
+}
+
+.music .wrapper .card:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+
+    width: 25vw;
+    height: 50vh;
+    border-radius: 1rem;
+    transition: .3s;
+
+
+}
+
+.music .wrapper .desc {
+    top: 5rem;
+    margin: 1rem;
+    position: absolute;
+}
+
+.music .wrapper img {
+    z-index: -1;
+    width: 25vw;
+    height: 50vh;
+    object-fit: cover;
+    position: relative;
+    border-radius: 1rem;
+    filter: opacity(50%);
+
+}
+
+.music .albums h2 {
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.music .albums span {
+    font-size: 1.5rem;
+    color: var(--cinza-desaturado)
+}
+
+.music .albums p {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0rem .5rem 0rem 0rem;
+}
+
+/*scroll button*/
+#myBtn {
+
+
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: #fff;
+    /* Set a background color */
+    color: var(--lilás);
+    ;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 10px 15px 10px 15px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    transition: .5s ease;
+
+    /* Increase font size */
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+#myBtn:hover {
+
+    transform: scale(1.2);
+}
+
+/* Para telas menores que 1200px (tablets grandes e desktops pequenos) */
+@media (max-width: 1200px) {
+    .music .albums .wrapper {
+        grid-template-columns: repeat(2, 26rem);
+        gap: 2rem; 
+    }
+
+    .music .wrapper .card {
+        width: 100%; 
+        margin: 4rem 0 0 0; 
+    }
+
+    .music .wrapper img {
+        width: 100%; 
+    }
+}
+
+/* Para telas menores que 768px (tablets e celulares grandes) */
+@media (max-width: 1200px) {
+    .music .albums .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .music .wrapper .card {
+        width: 35vw;
+        height: 40vh;
+    }
+
+    .music .wrapper img {
+        width: 35vw;
+        height: 40vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .music .albums .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .music .wrapper .card {
+        width: 70vw;
+        height: 50vh;
+        margin: 4rem auto 0 auto;
+    }
+
+    .music .wrapper img {
+        width: 70vw;
+        height: 50vh;
+    }
+
+    .music .albums {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .music .albums h2 {
+        font-size: 2.5rem;
+    }
+
+    .music .albums span {
+        font-size: 1.2rem;
+    }
+
+    .music .albums p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .music .wrapper .card {
+        width: 90vw;
+        height: 40vh;
+    }
+
+    .music .wrapper img {
+        width: 90vw;
+        height: 40vh;
+    }
+
+    .music .albums h2 {
+        font-size: 2rem;
+    }
+
+    .music .albums span {
+        font-size: 1rem;
+    }
+
+    .music .albums p {
+        font-size: 0.8rem;
+    }
+
+    #myBtn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 320px) {
+    .music .wrapper .card {
+        width: 95vw;
+        height: 35vh;
+    }
+
+    .music .wrapper img {
+        width: 95vw;
+        height: 35vh;
+    }
+
+    .music .albums h2 {
+        font-size: 1.8rem;
+    }
+
+    .music .albums span {
+        font-size: 0.9rem;
+    }
+
+    .music .albums p {
+        font-size: 0.7rem;
+    }
+
+    #myBtn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}

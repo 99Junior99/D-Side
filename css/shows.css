@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/*geral*/
+:root {
+    --cinza-desaturado: #d9d9d9;
+    --lilás: #9E1F83;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--cinza-desaturado);
+
+}
+
+/*scrollbar*/
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #181818;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 10px;
+}
+
+/*sections geral*/
+section {
+    padding: 0;
+}
+
+/*shows*/
+.shows {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: var(--lilás);
+}
+
+.shows .bg {
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(41%) grayscale(100%);
+}
+
+.shows:before {
+    z-index: 777;
+    content: '';
+    position: absolute;
+    background: var(--lilás);
+
+    filter: opacity(0.1);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.shows .content {
+    display: flex;
+    justify-content: center;
+    z-index: 888;
+    color: var(--cinza-desaturado);
+    width: 70%;
+    margin: 6rem 0rem 0rem 0;
+    justify-content: space-between;
+
+
+
+}
+
+.shows .content .card {
+    margin: 1rem;
+    padding: 2rem;
+    background-color: #1e1e1e;
+    border-radius: .5rem;
+    height: 70vh;
+    width: 50vw;
+
+}
+
+.shows #second {
+    margin-top: 10rem;
+}
+
+.shows .card h2 {
+    font-size: 1.8rem;
+    color: var(--lilás);
+}
+
+.shows .card span {
+    color: var(--cinza-desaturado);
+
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.shows .card h3 {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.shows .card h2,
+h3,
+span {
+    text-transform: uppercase;
+}
+
+.shows .card p {
+    font-weight: 500;
+    padding-top: 1rem;
+}
+
+.shows .card button {
+    z-index: 999;
+
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: var(--cinza-desaturado);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 1rem;
+    margin-top: 7rem;
+    bottom: 5rem;
+    border-radius: .3rem;
+
+}
+
+.shows .card #vip {
+    margin: 0 0 0 1rem;
+    width: 5rem;
+    background-color: var(--lilás);
+    color: var(--cinza-desaturado);
+
+}
+
+.shows .card button:hover {
+    transform: scale(1.2);
+    transition: .5s ease;
+}
+/* Media Queries para Responsividade */
+
+/* Para telas menores que 1200px (tablets grandes e desktops pequenos) */
+@media (max-width: 1200px) {
+    .shows .content {
+        flex-direction: column; /* Altera a direção do flex para coluna */
+        align-items: center; /* Centraliza os cards */
+        width: 90%; /* Aumenta a largura da seção de conteúdo */
+    }
+
+    .shows .content .card {
+        width: 80vw; /* Aumenta a largura dos cards */
+        height: auto; /* Ajusta a altura automaticamente */
+        margin: 1rem 0; /* Reduz a margem entre os cards */
+    }
+
+    .shows #second {
+        margin-top: 1rem; /* Remove a margem superior extra */
+    }
+
+    .shows .card button {
+        margin-top: 2rem; /* Reduz a margem superior do botão */
+    }
+}
+
+/* Para telas menores que 768px (tablets e celulares grandes) */
+@media (max-width: 768px) {
+    .shows .content .card {
+        width: 90vw; /* Aumenta a largura dos cards */
+        padding: 1.5rem; /* Reduz o padding interno */
+    }
+
+    .shows .card h2 {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte do título */
+    }
+
+    .shows .card span {
+        font-size: 1rem; /* Reduz o tamanho da fonte do subtítulo */
+    }
+
+    .shows .card h3 {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte do subtítulo */
+    }
+
+    .shows .card p {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte do parágrafo */
+    }
+
+    .shows .card button {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte do botão */
+        padding: 0.8rem; /* Reduz o padding do botão */
+        margin-top: 1.5rem; /* Reduz a margem superior do botão */
+    }
+
+    .shows .card #vip {
+        width: 4rem; /* Reduz a largura do botão VIP */
+    }
+}
+
+/* Para telas menores que 480px (celulares pequenos) */
+@media (max-width: 480px) {
+    .shows .content .card {
+        width: 95vw; /* Aumenta a largura dos cards */
+        padding: 1rem; /* Reduz o padding interno */
+    }
+
+    .shows .card h2 {
+        font-size: 1.3rem; /* Reduz o tamanho da fonte do título */
+    }
+
+    .shows .card span {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte do subtítulo */
+    }
+
+    .shows .card h3 {
+        font-size: 0.8rem; /* Reduz o tamanho da fonte do subtítulo */
+    }
+
+    .shows .card p {
+        font-size: 0.8rem; /* Reduz o tamanho da fonte do parágrafo */
+    }
+
+    .shows .card button {
+        font-size: 0.8rem; /* Reduz o tamanho da fonte do botão */
+        padding: 0.7rem; /* Reduz o padding do botão */
+        margin-top: 1rem; /* Reduz a margem superior do botão */
+    }
+
+    .shows .card #vip {
+        width: 3.5rem; /* Reduz a largura do botão VIP */
+    }
+}
+
+/* Para telas menores que 320px (celulares muito pequenos) */
+@media (max-width: 320px) {
+    .shows .content .card {
+        width: 100vw; /* Ocupa toda a largura da tela */
+        padding: 0.8rem; /* Reduz o padding interno */
+    }
+
+    .shows .card h2 {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte do título */
+    }
+
+    .shows .card span {
+        font-size: 0.8rem; /* Reduz o tamanho da fonte do subtítulo */
+    }
+
+    .shows .card h3 {
+        font-size: 0.7rem; /* Reduz o tamanho da fonte do subtítulo */
+    }
+
+    .shows .card p {
+        font-size: 0.7rem; /* Reduz o tamanho da fonte do parágrafo */
+    }
+
+    .shows .card button {
+        font-size: 0.7rem; /* Reduz o tamanho da fonte do botão */
+        padding: 0.6rem; /* Reduz o padding do botão */
+        margin-top: 0.8rem; /* Reduz a margem superior do botão */
+    }
+
+    .shows .card #vip {
+        width: 3rem; /* Reduz a largura do botão VIP */
+    }
+}

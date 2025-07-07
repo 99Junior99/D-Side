@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-Side/Music</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://kit.fontawesome.com/1afc72397c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div w3-include-html="/components/navbar.html"></div>
+    <div w3-include-html="/components/music-section.html"></div>
+</body>
+<script src="/js/navbar.js"></script>
+<script src="/js/partition.js"></script>
+<script>
+    includeHTML();
+    //scroll button
+    // Get the button:
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 10px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        currentYOffset = self.pageYOffset;
+        initYOffset = currentYOffset;
+
+        var intervalId = setInterval(function () {
+            currentYOffset -= initYOffset * 0.05;
+            document.body.scrollTop = currentYOffset;
+            document.documentElement.scrollTop = currentYOffset;
+
+            if (self.pageYOffset == 0) {
+                clearInterval(intervalId);
+            }
+        }, 15);
+
+    }
+</script>
+</html>

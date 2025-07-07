@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/*geral*/
+:root {
+    --cinza-desaturado: #d9d9d9;
+    --lilás: #9E1F83;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--cinza-desaturado);
+
+}
+
+/*navbar*/
+header {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: var(--cinza-desaturado);
+    border-bottom: .3rem solid #000;
+}
+
+header i {
+    color: #fff;
+
+}
+
+header .brand {
+    color: var(--lilás);
+    position: absolute;
+    background: #000;
+    padding: 1.5rem;
+    left: -.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header .brand:hover {
+    color: var(--cinza-desaturado);
+}
+
+header .navigation {
+    position: relative;
+
+}
+
+header .navigation .navigation-items a {
+    position: relative;
+    color: #1e1e1e;
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+    padding: 1.6rem;
+}
+
+header .navigation .navigation-items a:hover {
+    color: var(--lilás);
+    background-color: #000;
+}
+.menu-btn img {
+    display: none;
+}
+#menuClose {
+    display: none;
+}
+#menutoggle {
+    display: none;
+}
+@media (max-width: 768px) {
+    header .navigation .navigation-items a {
+        position: relative;
+        color: #1e1e1e;
+        font-size: 1em;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s ease;
+        padding: 1.6rem;
+        z-index: 100;
+    }
+    .navigation {
+        display: none; /* Menu escondido por padrão */
+    }
+    header .brand {
+        color: var(--lilás);
+        position: absolute;
+        background: #000;
+        padding: 0.7rem;
+        left: -.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .navigation.active {
+        transform: translateX(0);
+        transition: 0.3s ease;
+        background-color: #d9d9d9;
+        top: 0;
+        position: fixed; /* Garante que o menu fique fixo na tela */
+        right: 0;
+        height: 100vh; /* Ocupa 100% da altura da tela */
+        width: 80%; /* Ocupa 50% da largura da tela */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 100; /* Garante que o menu fique acima de todos os elementos da página */
+    }
+    
+
+    .navigation-items {
+        display: block;
+        margin-top: 7rem;
+    }
+    .navigation-items a {
+        display: block;
+        width: 100%; 
+        text-align: center;
+    }
+
+    .menu-btn img  {
+        display: block;
+        width: 50px;
+        cursor: pointer;
+        right: 0;
+        top: 0;
+        position: absolute;
+    }
+    #menuClose {
+        display: none; /* Escondido por padrão */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        cursor: pointer;
+        z-index: 101; /* Garante que o ícone fique acima do menu */
+    }
+    
+    .navigation.active #menuClose {
+        display: block; /* Mostra o X quando o menu está ativo */
+    
+
+    header .navigation .navigation-items a {
+        padding: 2rem; /* Ajuste de espaçamento no menu lateral */
+        text-align: center;
+    }
+}
+}
